@@ -1,0 +1,840 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.owl-ontologies.com/Kesehatan.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.owl-ontologies.com/Kesehatan.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="KesehatanTelinga">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="KesehatanWanita"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ObatdanSuplemen"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ProdukKesehatanLainnya"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="AlatKesehatan"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="KesehatanMata"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="KesehatanMulutdanGigi"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Kesehatan"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kesehatan Telinga</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="PemutihGigi">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pemutih Gigi</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="PembersihLidah"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ObatKumur"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#KesehatanMulutdanGigi"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Kesehatan">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kesehatan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="KBdanKontrasepsi">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#AlatKesehatan"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="TimbangandanAlatUkurKesehatan"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="AlatBantuKesehatan"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >KB dan Kontrasepsi</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#PembersihLidah">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#KesehatanMulutdanGigi"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pembersih Lidah</rdfs:label>
+    <owl:disjointWith rdf:resource="#PemutihGigi"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#ObatKumur"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="ObatTetesMata">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Obat Tetes Mata</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="AlatTerapiMata"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#KesehatanMata"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#KesehatanWanita">
+    <rdfs:subClassOf rdf:resource="#Kesehatan"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#ObatdanSuplemen"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#ProdukKesehatanLainnya"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#KesehatanTelinga"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AlatKesehatan"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#KesehatanMata"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#KesehatanMulutdanGigi"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kesehatan Wanita</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ObatObatan">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Obat Obatan</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ObatdanSuplemen"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="VitamindanSuplemen"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Herbal"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#AlatBantuKesehatan">
+    <owl:disjointWith rdf:resource="#KBdanKontrasepsi"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TimbangandanAlatUkurKesehatan"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#AlatKesehatan"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alat Bantu Kesehatan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#ObatKumur">
+    <owl:disjointWith rdf:resource="#PembersihLidah"/>
+    <owl:disjointWith rdf:resource="#PemutihGigi"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#KesehatanMulutdanGigi"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Obat Kumur</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Pembalut">
+    <rdfs:subClassOf rdf:resource="#KesehatanWanita"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pembalut</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#VitamindanSuplemen">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ObatdanSuplemen"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vitamin dan Suplemen</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Herbal"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#ObatObatan"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AlatBantuDengar">
+    <rdfs:subClassOf rdf:resource="#KesehatanTelinga"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alat Bantu Dengar</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="PembersihTelinga"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#ObatdanSuplemen">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Obat dan Suplemen</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#ProdukKesehatanLainnya"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#KesehatanWanita"/>
+    <owl:disjointWith rdf:resource="#KesehatanTelinga"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AlatKesehatan"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#KesehatanMata"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#KesehatanMulutdanGigi"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Kesehatan"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Herbal">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Herbal</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#ObatdanSuplemen"/>
+    <owl:disjointWith rdf:resource="#VitamindanSuplemen"/>
+    <owl:disjointWith rdf:resource="#ObatObatan"/>
+  </owl:Class>
+  <owl:Class rdf:about="#KesehatanMata">
+    <owl:disjointWith rdf:resource="#KesehatanWanita"/>
+    <owl:disjointWith rdf:resource="#ObatdanSuplemen"/>
+    <owl:disjointWith rdf:resource="#KesehatanTelinga"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AlatKesehatan"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#ProdukKesehatanLainnya"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#KesehatanMulutdanGigi"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kesehatan Mata</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Kesehatan"/>
+  </owl:Class>
+  <owl:Class rdf:about="#AlatTerapiMata">
+    <owl:disjointWith rdf:resource="#ObatTetesMata"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alat Terapi Mata</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#KesehatanMata"/>
+  </owl:Class>
+  <owl:Class rdf:about="#TimbangandanAlatUkurKesehatan">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#AlatKesehatan"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#KBdanKontrasepsi"/>
+    <owl:disjointWith rdf:resource="#AlatBantuKesehatan"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Timbangan dan Alat Ukur Kesehatan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#ProdukKesehatanLainnya">
+    <rdfs:subClassOf rdf:resource="#Kesehatan"/>
+    <owl:disjointWith rdf:resource="#ObatdanSuplemen"/>
+    <owl:disjointWith rdf:resource="#KesehatanWanita"/>
+    <owl:disjointWith rdf:resource="#KesehatanTelinga"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AlatKesehatan"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#KesehatanMata"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#KesehatanMulutdanGigi"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Produk Kesehatan Lainnya</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#KesehatanMulutdanGigi">
+    <owl:disjointWith rdf:resource="#KesehatanWanita"/>
+    <owl:disjointWith rdf:resource="#ObatdanSuplemen"/>
+    <owl:disjointWith rdf:resource="#KesehatanTelinga"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AlatKesehatan"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#ProdukKesehatanLainnya"/>
+    <owl:disjointWith rdf:resource="#KesehatanMata"/>
+    <rdfs:subClassOf rdf:resource="#Kesehatan"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kesehatan Mulut dan Gigi</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#AlatKesehatan">
+    <rdfs:subClassOf rdf:resource="#Kesehatan"/>
+    <owl:disjointWith rdf:resource="#KesehatanWanita"/>
+    <owl:disjointWith rdf:resource="#ObatdanSuplemen"/>
+    <owl:disjointWith rdf:resource="#KesehatanTelinga"/>
+    <owl:disjointWith rdf:resource="#ProdukKesehatanLainnya"/>
+    <owl:disjointWith rdf:resource="#KesehatanMata"/>
+    <owl:disjointWith rdf:resource="#KesehatanMulutdanGigi"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alat Kesehatan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#PembersihTelinga">
+    <rdfs:subClassOf rdf:resource="#KesehatanTelinga"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pembersih Telinga</rdfs:label>
+    <owl:disjointWith rdf:resource="#AlatBantuDengar"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="objectProperty_23"/>
+  <owl:DatatypeProperty rdf:ID="datatypeProperty_1"/>
+  <owl:DatatypeProperty rdf:ID="harga">
+    <rdfs:domain rdf:resource="#Kesehatan"/>
+    <rdfs:subPropertyOf rdf:resource="#datatypeProperty_1"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="foto">
+    <rdfs:domain rdf:resource="#Kesehatan"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="#datatypeProperty_1"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="judul">
+    <rdfs:domain rdf:resource="#Kesehatan"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="#datatypeProperty_1"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="deskripsi">
+    <rdfs:subPropertyOf rdf:resource="#datatypeProperty_1"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Kesehatan"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="id">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Kesehatan"/>
+    <rdfs:subPropertyOf rdf:resource="#datatypeProperty_1"/>
+  </owl:DatatypeProperty>
+  <ProdukKesehatanLainnya rdf:ID="PKL003">
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >YOUNG LIVING ESSENTIAL OIL - LAVENDER Net Weight : 5ml</deskripsi>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s3.bukalapak.com/img/3825993532/w-300/image.jpg</foto>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PKL003</id>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1511000</harga>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >YOUNG LIVING Lavender - 5ml</judul>
+  </ProdukKesehatanLainnya>
+  <AlatBantuKesehatan rdf:ID="ABK001">
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >alat efektif yang diperuntukkan buat anda yang ingin berhenti mendengkur, atau sebagai hadiah untuk pasangan anda yang suka mendengkur, sehingga anda akan terbebas dari suara dengkur setiap malam. Juga untuk mencegah RASA MALU jika sedang tidur bersama sekamar dalam perjalanan dinas, di kereta, bis, dll.</deskripsi>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ALAT ANTI DENGKUR NOSE CLIP ANTI NGOROK AMPUH</judul>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ABK001</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s1.bukalapak.com/img/1330061573/w-300/ALAT_ANTI_DENGKUR_NOSE_CLIP_ANTI_NGOROK_AMPUH.jpg</foto>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >80000</harga>
+  </AlatBantuKesehatan>
+  <PemutihGigi rdf:ID="PMG003">
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PMG001</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s1.bukalapak.com/img/6134382244/w-300/pasta_gigi.png</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >formula silver pasta gigi ciptadent</deskripsi>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pasta Gigi</judul>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10000</harga>
+  </PemutihGigi>
+  <VitamindanSuplemen rdf:ID="VNS002">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >UN CREATINE MONOHYDRATE POWDER 120GR</judul>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Creatine Monohydrate dari Ultimate Nutrition merupakan 100% creatine monohydrate microcrystalline yang sudah dites oleh HPLC yang memastikan bahwa Creatine Monohydrate bebas dari zat-zat kontaminan. Creatine merupakan salah satu suplemen favorit (selain amino dan whey protein) karena kemampuannya dalam meningkatkan ukuran sel otot serta menciptakan tenaga latihan eksplosif dengan sangat cepat, aman dan efektif. Creatine Monohydrate akan berguna untuk menunjang intensitas latihan yang lebih tinggi melalui kontraksi otot yang maksimal.</deskripsi>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s3.bukalapak.com/img/3656688224/w-300/120GR.jpg</foto>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >127000</harga>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >VNS002</id>
+  </VitamindanSuplemen>
+  <VitamindanSuplemen rdf:ID="VNS001">
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s3.bukalapak.com/img/8993833244/w-300/1img20181116_230037_t_detox_untuk_penyembuhan_lu_1.png</foto>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1263400</harga>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Luka adalah rusaknya jaringan kulit yang mengakibatkan tidak berfungsinya kulit dan dapat menimbulkan berbagai macam keluhan seperti nyeri, demam, bengkak, dan kehilangan fungsi. Luka biasanya dapat sembuh sendiri , proses penyembuhan alami biasanya 7-21 hari.</deskripsi>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >VNS001</id>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Paket Smart Detox Untuk Penyembuhan Luka Kulit</judul>
+  </VitamindanSuplemen>
+  <Pembalut rdf:ID="PMT002">
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s3.bukalapak.com/img/8404782244/w-300/3324938_9053a124_97b6_4c0e_8d98_f90bc703090d_500_500.jpg</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Non woven fabric: bagian atas yang terbuat dari kapas yang lembut, sehingga mencegah iritasi, aman bagi kulit sensitif. Selain itu juga, menjaga permukaaan tetap kering, menyerap cairan dengan cepat. Dilengkapi dengan water proof side guard untuk mencegah tembus ke samping Anion (7200 pcs/cm3 - tertinggi saat ini)</deskripsi>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >59000</harga>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Natesh Sanitary Pad Day Use With Imagnetic 10pc</judul>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PMT002</id>
+  </Pembalut>
+  <KBdanKontrasepsi rdf:ID="KNK002">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Promo Nuru Platinum Massage Gel 250ml Murah</judul>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s0.bukalapak.com/img/0862668144/w-300/3148194072_f27a27e0_c076_4720_9420_6e9b936bd905_1000_568.jpg</foto>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >563000</harga>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NURU Gel adalah gel atau minyak pijat yang direkomendasi untuk dipakai badan ke badan. Dalam sekejap badan anda akan menjadi mengkilap dan licin! Bayangkan dipijit oleh pasangan anda badan ke badan! Pastinya meningkatkan gairah dan sensasi s*x yang luar biasa! </deskripsi>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >KNK003</id>
+  </KBdanKontrasepsi>
+  <PembersihLidah rdf:ID="PBL003">
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >31000</harga>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PBL003</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s2.bukalapak.com/img/2854581244/w-300/15050228_26226b3d_0668_4e11_9e8c_4be0cd1e819a_700_700.jpg</foto>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Spatel Stainless Steel Polos-Tongue Spatel-Spatula lidah Stainless St</judul>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Spatula lidah untuk pemeriksaan lidah dan tenggorokan bahan stainless steel, bisa dipakai berulang kali, bisa disteril.</deskripsi>
+  </PembersihLidah>
+  <VitamindanSuplemen rdf:ID="VNS003">
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >VNS003</id>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ZS100 PENUMBUH JENGGOT Alami - SALADIN Beard Oil - KUMIS - JAMBANG - BREWOK DAN RAMBUT</judul>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s1.bukalapak.com/img/1418800914/w-300/ZS100_PENUMBUH_JENGGOT_Alami___SALADIN_Beard_Oil___KUMIS___J.png</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MAMPU MENUMBUHKAN DENGAN CEPAT, ALAMI, DAN MAKSIMAL 100% ASLI DAN TERBUAT DARI BAHAN ALAMI TANPA BAHAN KIMIA, TIDAK ADA EFEK SAMPING GATAL, ATAUPUN EFEK SAMPING LAIN NYA. </deskripsi>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >142500</harga>
+  </VitamindanSuplemen>
+  <Herbal rdf:ID="HBL001">
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >260000</harga>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hirvero merupakan suplemen kesehatan kaya nutrisi membantu melindungi tubuh kita dari serangan infeksi dan bakteri yang masuk ke dalam tubuh. Mengandung bahan aktif dari beberapa macam ekstrak herbal seperti Curcuma Domestica Rhizoma ekstrak, Kaemferia Galangga Rhizoma ekstrak, Zingiberis Officinale Rhizoma ekstrak dan Morindae Citrifolia Fructus ekstrak yang baik untuk kesehatan tubuh.</deskripsi>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hirvero</judul>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s0.bukalapak.com/img/0011013244/w-300/hirvero.jpg</foto>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HBL001</id>
+  </Herbal>
+  <ObatObatan rdf:ID="OBN001">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Acustop Cataplasma Koyo</judul>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OBN001</id>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Acustop Cataplasma adalah penghilang rasa sakit yang superior dengan tindakan langsung di lokasi rasa sakit. Efektivitas ini disampaikan melalui TDDS (Transdermal Drug Delivery System). Cukup oleskan 1 lembar ke area yang terkena dampak dua kali sehari.</deskripsi>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s1.bukalapak.com/img/6671633244/w-300/1img20181116_230245_acustop_cataplasma_koyo_1.png</foto>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >132900</harga>
+  </ObatObatan>
+  <TimbangandanAlatUkurKesehatan rdf:ID="TNU001">
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TNU001</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s4.bukalapak.com/img/4728421634/w-300/TimbanganBadandanTinggiSMICZT120_1_scaledjpg_scaled.jpg</foto>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Timbangan Berat Dan Tinggi Badan SMIC ZT-120</judul>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Timbangan Mekanik Tinggi Badan dan Barang SMIC ZT-120 adalah timbangan badan untuk anak dan dewasa yang selain mampu untuk menimbang berat badan hingga 120 kg, juga dapat mengukur tinggi badan hingga 190 cm. Selain menimbang orang, ZT-120 juga dapat menimbang barang hingga 120 kg. Timbangan SMIC sudah banyak dipakai sebagai standard timbangan di Laboratorium Kesehatan di Rumah sakit, puskesmas dan klinik.</deskripsi>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >600000</harga>
+  </TimbangandanAlatUkurKesehatan>
+  <KBdanKontrasepsi rdf:ID="KNK003">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ONESTEP HIV AIDS TEST ALAT UJI PENYAKIT HIV ASLI</judul>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >KNK003</id>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >120000</harga>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s3.bukalapak.com/img/8519656073/s-194-194/ONESTEP_HIV_AIDS_TEST_ALAT_UJI_PENYAKIT_HIV_ASLI.jpg</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Test HIV merupakan pengujian untuk mengetahui apakah HIV ada dalam tubuh seseorang. Tes HIV yang umumnya digunakan adalah yang mendeteksi antibodi yang diproduksi oleh sistem kekebalan tubuh dalam merespons HIV, karena Antibodi itu lebih mudah dideteksi dibanding pendeteksian Virus itu sendiri. Antibodi diproduksi oleh sistem kekebalan tubuh dalam merespons suatu infeksi. HIV (Human Immunodeficiency Virus) adalah virus penyebab AIDS atau virus yang melemahkan sistem kekebalan tubuh (sel darah putih) sedangkan istilah AIDS (Acquired Immune Deficiency Syndrome) adalah kumpulan beberapa gejala akibat menurunnya sistem kekebalan tubuh yang disebabkan oleh HIV. </deskripsi>
+  </KBdanKontrasepsi>
+  <Pembalut rdf:ID="PMT001">
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >58000</harga>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Avail Pantiliner Hijau</judul>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PMT001</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s2.bukalapak.com/img/2251603244/w-300/770318_8a9ceecc_c672_4622_9410_7e2f92391885.jpg</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kunjungi toko kami dan cek barang-barang keren lainnya [+] Terimakasih, Jangan Lupa Follow+</deskripsi>
+  </Pembalut>
+  <PembersihTelinga rdf:ID="PBT003">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >alat pembersih telinga elektri korek kuping asli impor</judul>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alat ini dapat membersihkan telinga Anda dari kotoran telinga, seperti earwax dengan mudah. Bentuknya yang portabel dan bahan yang lembut, sangat membantu orang tua untuk membersihkan telinga anak-anaknya.</deskripsi>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >165000</harga>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PBT003</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s0.bukalapak.com/img/0047723293/w-300/PembersihTelingaElektrikEarCleanerSetMenghisapKotoranTelinga.jpg</foto>
+  </PembersihTelinga>
+  <PembersihLidah rdf:ID="PBL002">
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >On one side, it features soft bristles that help you gently remove any food debris left on your tongue. Flip it to the other side and you will get a firm rubberized scraper that helps thoroughly remove dead cells and bacteria that cause bad breath.</deskripsi>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PBL002</id>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Super Sale - Brushcare Two-Way Tongue Brush PEARLIE WHITE</judul>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >99000</harga>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s0.bukalapak.com/img/0806991244/w-300/28439304_fe0e295b_3fb8_4031_8c18_54d04c25137e_1024_1024.jpg</foto>
+  </PembersihLidah>
+  <rdf:Description rdf:ID="ATM003">
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kaca mata ini berfungsi untuk menutupi mata saat tidur. Sangat berguna bagi Anda yang sering susah tidur, dengan menggunakan googles ini maka cahaya tidak ada yang dapat masuk ke mata dan membuat tidur Anda lebih nyenyak.</deskripsi>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s2.bukalapak.com/img/7226637044/w-1000/1099742_5e331860_780a_4580_9940_eb8ad5a94191_448_430.jpg.webp</foto>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ATM003</id>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kacamata Ini Berfungsi Untuk Menutupi Mata Saat Tidur Penutup Mata</judul>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >64000</harga>
+  </rdf:Description>
+  <AlatBantuDengar rdf:ID="ABD001">
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >230000</harga>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s4.bukalapak.com/img/9151973303/w-1000/Alat_bantu_dengar___Hearing_aid___Axon_K88.png.webp</foto>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ABD001</id>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alat bantu dengar ini dilengkapi dengan batterai yang dapat diisi ulang sehingga tidak perlu untuk mengganti batterai. Alat ini memiliki design yang menarik dan kualitas tangkapan suara yang jernih.</deskripsi>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alat Bantu Dengar - Hearing Aid - Axon K88</judul>
+  </AlatBantuDengar>
+  <ObatKumur rdf:ID="OBK001">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Obat Sakit Gigi Herbal Tetes Meredakan Nyeri Ampuh Cepat Sehat Obati Sakit Gigi Berlubang Menyegarkan Bau Mulut Nafas Segar Alami Hebal Aman BPOM</judul>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Teteskan pada gigi (lubang gigi) yang sakit / basahi kapas dan letakkan pada gigi yang sakit. Lakukan 3 - 5 kali sehari. TIDAK BERBAHAYA JIKA TERTELAN</deskripsi>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s1.bukalapak.com/img/1190828911/w-300/IMG_20170430_094125_scaled.jpg</foto>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OBK001</id>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >61500</harga>
+  </ObatKumur>
+  <ObatTetesMata rdf:ID="OTM002">
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >80000</harga>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OBAT MATA MINUS - SILINDER - KATARAK - AMPUH-MEMBUAT MATA CERAH</judul>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OTM002</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s3.bukalapak.com/img/3757649513/w-300/OBAT_MATA_MINUS___SILINDER___KATARAK___AMPUH_MEMBUAT_MATA_CE.png</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Obat berbentuk Tetes ini sangat baik untuk syaraf penglihatan dan jaringan bola mata, dan merupakan vitamin yang amat baik untuk yang di pakai merupakan obat yang baik untuk menerangkan mata, mengatasi mata merah, mata perih. Sangat manjur untuk pengobatan penglihatan mata yang menurun dan gejala penglihatan yang minus. </deskripsi>
+  </ObatTetesMata>
+  <AlatBantuKesehatan rdf:ID="ABK003">
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ABK003</id>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1095000</harga>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sella 809B Kursi Roda merupakan kursi roda standard yang ekonomis dan praktis, dengan material stainless steel. Kursi roda ini dapat dilipat sehingga mudah dimasukkan ke dalam mobil.</deskripsi>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//87/MTA-1739200/sella_sella-809b-kursi-roda_full02.jpg</foto>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sella 809B Kursi Roda</judul>
+  </AlatBantuKesehatan>
+  <ProdukKesehatanLainnya rdf:ID="PKL001">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gasa Oil</judul>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >300000</harga>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s2.bukalapak.com/img/7860920144/w-300/gasa_oil_wm_scaled.jpg</foto>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PKL001</id>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gasa Oil merupakan minyak pijat yang di khususkan untuk memijat mr P. GASA OIL dibuat dari 100% bahan alami terpilih dari tumbuhan dan bahan tradisional,diproduksi secara higienis dan modern sehingga aman untuk kesehatan. Pemakaian GASA OIL secara rutin dan teratur dapat melancarkan peredaran darah dan mampu memaksimalkan kinerja mr P ketika berhubungan</deskripsi>
+  </ProdukKesehatanLainnya>
+  <Herbal rdf:ID="HBL002">
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1234000</harga>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Obat Vitalitas Pria Untuk Kuat Kejantanan Dan Jantung Sehat</judul>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HBL002</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s4.bukalapak.com/img/9345029453/w-300/IMG_20181014_130649_037_scaled.jpg</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Satu bungkus mengandung 5000 mg (5 gram) unsur l-arginine mutu farmasi. Sering disebut sebagai molekul ajaib, l-arginine sangat berkhasiat dalam meningkatkan kesehatan.  </deskripsi>
+  </Herbal>
+  <AlatTerapiMata rdf:ID="ATM002">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OX PW NASA</judul>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Rumput laut yang terkandung dalam OX-PW Herbal secara khasiat memiliki senyawa aktif yang mengandung oksigen tinggi. Kandungan rumput laut juga dibutuhkan oleh organ vital seperti mata,otak, ginjal, jantung dan darah untuk metabolisme.</deskripsi>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >165000</harga>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ATM002</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s0.bukalapak.com/img/5051255714/w-300/jual_ox_pw_obat_katarak_mata_minus_plus_rabun_senja_herbal_a.jpg</foto>
+  </AlatTerapiMata>
+  <PembersihLidah rdf:ID="PBL001">
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s1.bukalapak.com/img/6261691244/w-300/1610830_38f00c24_d72d_4d24_a8ad_272074fce561_700_700.jpg</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >#termurah #tubuh #perawatan #mulut #kesehatan #tongue #cleaner #gigi #pembersih #terlaris #formula #lidah</deskripsi>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >38000</harga>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PBL001</id>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Termurah Dan Terlaris Pembersih Lidah Formula Tongue Cleaner</judul>
+  </PembersihLidah>
+  <ObatObatan rdf:ID="OBN002">
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OBN002</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s0.bukalapak.com/img/5371533244/w-300/1img20181116_225934_turbuhaler_160_4_5_120_doses_simbicort_1.jpg</foto>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >253500</harga>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Barang dijamin asli 100%. Orisinil box dan segel utuh. Baca Deskripsi Sebelum ORDER! Produk 99% READY STOCK Silahkan Klik BELI LANGSUNG, untuk tanya type atau harga boleh chat  kami.</deskripsi>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Symbicort Turbuhaler 160 4 5 120 Doses Simbicort Harga Promo</judul>
+  </ObatObatan>
+  <ObatTetesMata rdf:ID="OTM001">
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s1.bukalapak.com/img/1198256213/w-300/137.jpg</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >BS 12 Herbal OTM adalah ramuan herbal alami yang diadopsikan pada madu khusus</deskripsi>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Obat Mata Iritasi</judul>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >175000</harga>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OTM001</id>
+  </ObatTetesMata>
+  <rdf:Description rdf:ID="OBK002">
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OBK002</id>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LISTERINE COOL MINT ANTISEPTIC MOUTHWASH 250ML</judul>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s1.bukalapak.com/img/6931687073/w-300/Screenshot_2018_10_29_07_41_57_1.png</foto>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >13800</harga>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Listerine Antiseptic Mouthwash Cool Mint merupakan obat kumur untuk melawan kuman-kuman penyebab bau mulut, plak dan radang gusi dengan sensasi dingin yang segar dari mint. Exp . 032019</deskripsi>
+  </rdf:Description>
+  <PemutihGigi rdf:ID="PMG002">
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >90000</harga>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PMG002</id>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DI JUAL PER LUSIN ISI 12 PCS PEPSODENT HERBAL UKURAN 75G</deskripsi>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s3.bukalapak.com/img/3092827144/w-300/PASTA_GIGI_PEPSODENT_HERBAL_75G_X_12_PCS.jpg</foto>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PASTA GIGI PEPSODENT HERBAL 75G X 12 PCS</judul>
+  </PemutihGigi>
+  <TimbangandanAlatUkurKesehatan rdf:ID="TNU002">
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >249000</harga>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alat Ukur Tekanan Darah Electronic Sphygmomanometer 3V</judul>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TNU002</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s2.bukalapak.com/img/2708606661/w-300/Pengukur_Tekanan_Darah_3V.jpg</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alat ini berfungsi untuk mengetahui detak jantung dan tekanan darah manusia. Digunakan dengan cara memasang alat sphygmomanometer ini pada lengan tangan dan alat ini akan membaca tekanan darah secara perlahan, tunggu beberapa saat untuk mengetahui hasil akhir.</deskripsi>
+  </TimbangandanAlatUkurKesehatan>
+  <PembersihTelinga rdf:ID="PBT002">
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PBT001</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s1.bukalapak.com/img/1086382244/w-300/22072021_323ed061_ea7e_4fde_9b0e_9facab2882f5_300_300.jpg</foto>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vital Ear Oil 10 Ml - Obat Tetes Telinga Membersihkan Rongga Telinga</judul>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >34000</harga>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vital Ear Oil merupakan obat tetes telinga yang berfungsi membersihkan kotoran yang mengendap pada telinga di bagian dalam. Endapan kotoran yang tidak dibersihkan dengan benar, maka akan menimbulkan rasa gatal, nyeri, bahkan dapat terjadinya infeksi atau peradangan pada telinga.</deskripsi>
+  </PembersihTelinga>
+  <AlatBantuDengar rdf:ID="ABD002">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alat Batu Dengar AXON C109 C108 Cantol Telinga Charge</judul>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >679000</harga>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >New hearing aid - Rechargeable BTE hearing aid - Lithium battery, - Superior sound quality</deskripsi>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s4.bukalapak.com/img/9545682244/w-300/12789922_05e7eda3_5028_4b3e_854c_6efd17f3ae28_700_700.jpg</foto>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ABD002</id>
+  </AlatBantuDengar>
+  <AlatBantuKesehatan rdf:ID="ABK002">
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ABK002</id>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Oxycan Tabung Oksigen Portabel</judul>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >180000</harga>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//1360/oxycan_oxycan-tabung-oksigen-portable-untuk-pertolongan-pertama_full02.jpg</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tabung oksigen portabel</deskripsi>
+  </AlatBantuKesehatan>
+  <rdf:Description rdf:ID="HBL003">
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HBL003</id>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >98000</harga>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manjakani Kanza Majakani Obat Keputihan Myom Kista - 20butir</judul>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s2.bukalapak.com/img/2746291941/w-300/Manjakani_Kanza_Majakani_Obat_Keputihan_Myom_Kista___20butir.jpg</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manjakani Kanza merupakan produk untuk perawatan organ intim wanita yang terbuat dari buah majakani / manjakani yang telah lama dikenal sebagai herbal ajaib yang terbukti efektif mengobati berbagai masalah kewanitaan seperti keputihan, miom, kista, membunuh bakteri/virus yang menyebabkan susah hamil, merapatkan kembali miss v dan lain-lain. </deskripsi>
+  </rdf:Description>
+  <ProdukKesehatanLainnya rdf:ID="PKL002">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Susu Ensure Vanilla - 1000 gram</judul>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PKL002</id>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ENSURE FOS 1 merupakan susu untuk orang dewasa yang mengandung nutrisi lengkap dan seimbang untuk membantu melengkapi kebutuhan nutrisi harian, membangun landasan hidup sehat di masa mendatang. Susu ini mengandung vitamin (A,C,E), Zink dan Selenium untuk manfaat antioksidan, Tinggi Kalsium dan Vitamin (D,K) untuk membangun tulang yang kuat, Prebiotik (FOS) untuk membantu saluran pencernaan, serta Omega 3, Omega 6, dan Omega 9 serta rendah kolestrol yang merupakan campuran lemak baik untuk jantung. Dengan ENSURE FOS dapat membuat Anda tetap sehat hingga masa mendatang.</deskripsi>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s1.bukalapak.com/img/6880353244/w-300/Susu_Ensure_Vanilla___1000_gram.jpg</foto>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >252300</harga>
+  </ProdukKesehatanLainnya>
+  <ObatTetesMata rdf:ID="OTM003">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Green World Eye Care Softgel</judul>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >462000</harga>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OTM003</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s3.bukalapak.com/img/8988028144/w-300/1.jpg</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Produk ini dapat memenuhi nutrisi yang dibutuhkan mata, memperbaiki sirkulasi di bagian mata, menjaga kesehatan kapiler, mengurangi lelah, sakit dan kering pada mata. Melindungi lensa mata, mencegah penurunan daya penglihatan, mencegah glaukoma pada orang tua, katarak dan presbyopia. Mencegah mata kering, mata merah, mata gatal, rabun jauh dll yang disebabkan oleh penggunaan mata yang terlalu lama maupun radiasi dari komputer atau TV.</deskripsi>
+  </ObatTetesMata>
+  <rdf:Description rdf:ID="OBN003">
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Titan Red Provocative Gel adalah Gel khusus untuk pria yang mempercepat penyerapan cepat dan hasil yang cepat dengan sistem transdermal, terbuat dari dari bahan - bahan alami yang secara signifikan memperluas pembuluh darah kapiler hingga menjadikan alat vital pria bertambah besar dan lebih tebal dalam waktu singkat, tanpa efek samping dan aman digunakan</deskripsi>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >300000</harga>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s0.bukalapak.com/img/5120961244/w-300/images_17__scaled.jpg</foto>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >T1 T4n 9el Red Original Rusia</judul>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OBN003</id>
+  </rdf:Description>
+  <AlatTerapiMata rdf:ID="ATM001">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Unik Kacamata Klip On Anti Silau HD Vision Isi 2 Murah </judul>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s4.bukalapak.com/img/9325436144/w-300/31114126893_569534ed_3fd9_4497_89fa_a1bc023c24a9_600_600.jpg</foto>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ATM001</id>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >95000</harga>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Melihat dengan jelas di malam hari. Sangat cocok untuk mengemudi di malam hari . p wrounds merupakan pengembangan kacamata antisilau dibandingkan versi terdahulunya. 1. Praktis bagi yang tidak maupun yg mengenakan kacamata minus karena tidak perlu melepas kacamata yang sudah dipakai.</deskripsi>
+  </AlatTerapiMata>
+  <ObatKumur rdf:ID="OBK003">
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >460000</harga>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OBK003</id>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Jual THERABREATH Penghilang Bau Mulut Nafas Segar 24 Jam Limited</judul>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bau mulut mengganggu pergaulan anda? Bau mulut setelah merokok? Suka durian/ petai/ jengkol, tapi terganggu karena bau mulut setelahnya Therabreath obat kumur made in USA terbukti ampuh menghilangkan bau mulut dalam 1 menit.</deskripsi>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s0.bukalapak.com/img/0142159144/w-300/5135380740_4823d426_0fb9_4823_b87d_8a3ff463978a_450_450.jpg</foto>
+  </ObatKumur>
+  <rdf:Description rdf:ID="PMT003">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Laurier Comfort Night Bundle</judul>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PMT003</id>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Welcome Reseller [+] Langsung di order aja ya gan :) [+] Semua Ready Stok [+] Kunjungi toko kami dan cek barang-barang keren lainnya [+] Terimakasih, Jangan Lupa Follow+</deskripsi>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s0.bukalapak.com/img/0156482244/w-300/23071503_4b642cae_150f_4858_872e_7f6135ab460e_1000_1000.jpg</foto>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >62000</harga>
+  </rdf:Description>
+  <PemutihGigi rdf:ID="PMG001">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DENTA SECRET PEMUTIH GIGI</judul>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PMG001</id>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Denta Secret 100% Natural teeth whitening charcoal powder FDA APPOVED, 0 CHEMICAL aman dipkai setiap hari. </deskripsi>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >175000</harga>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s2.bukalapak.com/img/2765480633/w-300/5_1024x1024.jpg</foto>
+  </PemutihGigi>
+  <AlatBantuDengar rdf:ID="ABD003">
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s2.bukalapak.com/img/7674942244/w-300/7861300_99a520ff_0e87_40aa_af97_f03ec13b15e8.jpg</foto>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >210000</harga>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alat Bantu Dengar Axon X 168</judul>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Axon adalah merek ASLI dari pabrik dan kami menjual produk dan kemasannya ASLI dari pabrik. Merek AXON telah beredar hampir di setiap negara</deskripsi>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ABD003</id>
+  </AlatBantuDengar>
+  <PembersihTelinga rdf:ID="PBT001">
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s4.bukalapak.com/img/4699510814/w-300/Earpick_LED_Karakter_Pembersih_Telinga_Anak_Lampu_Lucu_Model.png</foto>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >3900</harga>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Memudahkan Anda dalam mengambil kotoran telinga dengan bantuan cahaya terang pada ujung earpick * Earpick dapat diganti-ganti sesuai kebutuhan (termasuk 2 earpick dengan ukuran berbeda dan satu tweezer untuk penjepit) * Penampilan elegan yang didesain khusus untuk sesuai dengan telinga manusia </deskripsi>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PBT001</id>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Earpick LED Karakter Pembersih Telinga Anak Lampu Lucu Model Baru</judul>
+  </PembersihTelinga>
+  <KBdanKontrasepsi rdf:ID="KNK001">
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >KNK001</id>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s0.bukalapak.com/img/5712390062/w-300/2018_05_02T01_50_43_07_00.jpg</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cara Pakai : Usapkan tissue basah antiseptik Magic Power anda dengan rata, diamkan selama 3 - 5 menit. Pemakaian hanya sekali lalu dibuang.</deskripsi>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10000</harga>
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tisu Magic Power MERAH</judul>
+  </KBdanKontrasepsi>
+  <TimbangandanAlatUkurKesehatan rdf:ID="TNU003">
+    <judul rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alat Pengukur Suhu Thermometer Badan Infrared Elera Original</judul>
+    <foto rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >https://s0.bukalapak.com/img/0079618562/w-300/Alat_Pengukur_Suhu_Thermometer_Badan_Infrared_Elera_Original.jpg</foto>
+    <deskripsi rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alat Pengukur Suhu Thermometer Badan Infrared Elera Original, garansi 1 bulan.</deskripsi>
+    <harga rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >199000</harga>
+    <id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TNU003</id>
+  </TimbangandanAlatUkurKesehatan>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->
